@@ -4,6 +4,8 @@ public class Count {
 
     private static final String PRICE_CANNOT_BE_NEGATIVE = "로또의 개수는 음수가 될 수 없습니다.";
     private static final String MAX_MANUAL_LOTTO_COUNT_MESSAGE = "수동 로또는 총 로또 개수보다 클 수 없습니다.";
+    private static final int ZERO = 0;
+
     private final int autoLottoCount;
     private final int manualLottoCount;
 
@@ -15,7 +17,7 @@ public class Count {
     }
 
     private void checkNegativeCount(int manualLottoCount) {
-        if (manualLottoCount < 0) {
+        if (manualLottoCount < ZERO) {
             throw new IllegalArgumentException(PRICE_CANNOT_BE_NEGATIVE);
         }
     }
